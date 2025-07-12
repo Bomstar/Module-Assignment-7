@@ -1,6 +1,6 @@
 import { Clock3, Flame } from "lucide-react";
 
-function RecipesCard({ recipe }) {
+function RecipesCard({ recipe, handleWantToCook }) {
   const {
     recipe_image,
     recipe_name,
@@ -14,11 +14,11 @@ function RecipesCard({ recipe }) {
       <div className="rounded-lg aspect-video flex items-center justify-center overflow-hidden">
         <img className="object-cover" src={recipe_image} alt="object-contain" />
       </div>
-      <div className="space-y-2 pb-3 border-b border-gray-300 ">
+      <div className="space-y-2 pb-3 border-b-[1.5px] border-amber-600 ">
         <h1 className="text-xl font-bold">{recipe_name}</h1>
         <p className="text-gray-600 ">{short_description}</p>
       </div>
-      <div className="space-y-3 border-b pb-5 !mb-3 border-gray-300">
+      <div className="space-y-3 border-b-[1.5px] pb-5 !mb-3 border-amber-600">
         <h2 className="text-lg font-semibold">
           Ingredients: {ingredients.length}
         </h2>
@@ -36,7 +36,10 @@ function RecipesCard({ recipe }) {
           <Flame size={22} /> {calories} calories
         </p>
       </div>
-      <button className="py-3 px-5 border-2 rounded-full font-bold text-white border-amber-900 bg-amber-600">
+      <button
+        onClick={() => handleWantToCook(recipe)}
+        className="py-3 px-5 border-2 rounded-full font-bold text-white border-amber-900 bg-amber-600"
+      >
         Want to Cook
       </button>
     </div>
