@@ -34,7 +34,7 @@ function OurRecipes() {
 
   console.log(recipes);
   return (
-    <div className="space-y-14">
+    <div className="space-y-14 mb-14">
       <div className="text-center px-48 space-y-5">
         <ToastContainer position="top-right" autoClose={3000} />
         <h1 className="text-4xl font-bold">Our Recipes</h1>
@@ -44,8 +44,8 @@ function OurRecipes() {
           beautiful photos, and tips to customize flavors to your taste.
         </p>
       </div>
-      <div className="grid grid-cols-5 gap-5">
-        <div className="grid grid-cols-2 col-span-3 gap-5">
+      <div className="flex gap-5">
+        <div className="w-[55%] grid grid-cols-2  gap-5">
           {recipes.map((item, idx) => (
             <RecipesCard
               key={idx}
@@ -54,7 +54,7 @@ function OurRecipes() {
             ></RecipesCard>
           ))}
         </div>
-        <div className="col-span-2">
+        <div className="w-[45%] relative">
           <RecipesProcess
             cookProcess={cookProcess}
             handleCookProcessing={handleCookProcessing}

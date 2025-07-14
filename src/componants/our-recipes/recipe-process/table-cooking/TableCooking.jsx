@@ -43,10 +43,12 @@ function TableCooking({ cooking }) {
           <td></td>
           <td></td>
           <td className="font-semibold px-3">
-            Total Times: {totalTime} minutes
+            Total Times: <br />
+            {totalTime} minutes
           </td>
           <td className="font-semibold px-3">
-            Total Calories: {totalCalories} calories
+            Total Calories: <br />
+            {totalCalories} calories
           </td>
         </tr>
       </tbody>

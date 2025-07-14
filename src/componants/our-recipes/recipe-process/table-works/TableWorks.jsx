@@ -33,7 +33,7 @@ function TableWorks({ cookProcess, handleCookProcessing }) {
               <button
                 key={idx}
                 onClick={() => handleCookProcessing(item)}
-                className="py-1 px-3 border-2 rounded-full font-bold text-white border-amber-900 bg-amber-600"
+                className="py-1 cursor-pointer px-3 border-2 rounded-full font-bold text-white border-amber-900 bg-amber-600"
               >
                 Preparing...
               </button>

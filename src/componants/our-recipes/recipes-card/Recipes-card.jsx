@@ -10,15 +10,19 @@ function RecipesCard({ recipe, handleWantToCook }) {
     preparing_time,
   } = recipe;
   return (
-    <div className="p-5 space-y-3 border border-gray-300 rounded-2xl">
-      <div className="rounded-lg aspect-video flex items-center justify-center overflow-hidden">
-        <img className="object-cover" src={recipe_image} alt="object-contain" />
+    <div className="p-5 space-y-3 border flex flex-col border-gray-300 rounded-2xl">
+      <div className="rounded-lg group transition  aspect-video flex items-center justify-center overflow-hidden">
+        <img
+          className="object-cover duration-300 group-hover:scale-105"
+          src={recipe_image}
+          alt="object-contain"
+        />
       </div>
-      <div className="space-y-2 pb-3 border-b-[1.5px] border-amber-600 ">
+      <div className="space-y-2 ">
         <h1 className="text-xl font-bold">{recipe_name}</h1>
         <p className="text-gray-600 ">{short_description}</p>
       </div>
-      <div className="space-y-3 border-b-[1.5px] pb-5 !mb-3 border-amber-600">
+      <div className="space-y-3 mt-auto border-y-[1.5px] py-5 !mb-3 border-amber-600">
         <h2 className="text-lg font-semibold">
           Ingredients: {ingredients.length}
         </h2>
@@ -36,12 +40,14 @@ function RecipesCard({ recipe, handleWantToCook }) {
           <Flame size={22} /> {calories} calories
         </p>
       </div>
-      <button
-        onClick={() => handleWantToCook(recipe)}
-        className="py-3 px-5 border-2 rounded-full font-bold text-white border-amber-900 bg-amber-600"
-      >
-        Want to Cook
-      </button>
+      <div>
+        <button
+          onClick={() => handleWantToCook(recipe)}
+          className="py-2 cursor-pointer px-5 border-2 rounded-full font-bold text-white border-amber-900 bg-amber-600"
+        >
+          Want to Cook
+        </button>
+      </div>
     </div>
   );
 }
